@@ -60,7 +60,7 @@ public class ClienteService {
             return;
         }
 
-        throw new RuntimeException("Animal não existe");
+        throw new RuntimeException("Cliente não existe");
     }
 
     private void validarCliente(ClienteDTO clienteDTO) {
