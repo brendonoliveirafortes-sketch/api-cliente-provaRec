@@ -35,11 +35,11 @@ public class ClienteService {
     public ClienteEntidade atualizar(Long id, ClienteDTO cliente) {
         this.validarCliente(cliente);
 
-        Optional<ClienteEntidade> animalretorno =
+        Optional<ClienteEntidade> clienteretorno =
                 clienteRepositorio.findById(id);
 
 
-        if(animalretorno.isPresent()) {
+        if(clienteretorno.isPresent()) {
             ClienteEntidade ClienteNovo = new ClienteEntidade();
             ClienteEntidade clienteNovo = new ClienteEntidade();
             clienteNovo.setNome(cliente.getNome());
@@ -51,7 +51,7 @@ public class ClienteService {
             return clienteRepositorio.save(clienteNovo);
         }
 
-        throw new RuntimeException("Animal não existe");
+        throw new RuntimeException("Cliente não existe");
     }
 
     public void deletar(Long id) {

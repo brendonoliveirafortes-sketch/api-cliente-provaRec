@@ -3,6 +3,9 @@ package br.com.senac.api_prova.dtos;
 import jakarta.persistence.Column;
 
 public class ClienteDTO {
+    private String nome;
+    private String email;
+    private String documento;
 
     public String getNome() {
         return nome;
@@ -27,13 +30,4 @@ public class ClienteDTO {
     public void setDocumento(String documento) {
         this.documento = documento;
     }
-
-    @Column(nullable = false, length = 100)
-    private String nome;
-
-    @Column(nullable = false, length = 30)
-    private String email;
-
-    @Column()
-    private String documento;
 }
